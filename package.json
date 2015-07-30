@@ -1,0 +1,39 @@
+{
+  "name": "lista",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon bin/www",
+    "watch": "watchify -t babelify -o public/javascripts/bundle.js -v -d public/javascripts/app.js",
+    "build": "browserify -t babelify public/javascripts/app.js | uglifyjs -cm > public/javascripts/bundle.min.js"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "~1.12.4",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.12.4",
+    "flux": "latest",
+    "jade": "~1.9.2",
+    "lodash": "latest",
+    "material-ui": "^0.10.2",
+    "morgan": "~1.5.3",
+    "react": "latest",
+    "react-engine": "^2.0.0",
+    "react-router": "^0.13.3",
+    "react-tap-event-plugin": "^0.1.7",
+    "serve-favicon": "~2.2.1"
+  },
+  "devDependencies": {
+    "babelify": "latest",
+    "browserify": "latest",
+    "envify": "latest",
+    "reactify": "latest",
+    "watchify": "latest"
+  }
+}

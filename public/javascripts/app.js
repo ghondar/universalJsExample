@@ -1,10 +1,8 @@
-import React from 'react'
-import injectTapEventPlugin from 'react-tap-event-plugin'
-import router from './routes/router'
+import Client from 'react-engine/lib/client'
+import routes from './routes/routes'
 
-router.run((Handler) => {
-  React.render(
-    <Handler />,
-    document.getElementById('container')
-  )
+const options = { routes }
+
+document.addEventListener('DOMContentLoaded', function onLoad() {
+    Client.boot(options);
 })

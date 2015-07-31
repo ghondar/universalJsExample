@@ -2,10 +2,11 @@
   "name": "lista",
   "version": "0.0.0",
   "private": true,
+  "main": "./bin/www",
   "scripts": {
-    "start": "nodemon bin/www",
-    "watch": "watchify -t babelify -o public/javascripts/bundle.js -v -d public/javascripts/app.js",
-    "build": "browserify -t babelify public/javascripts/app.js | uglifyjs -cm > public/javascripts/bundle.min.js"
+    "start": "nodemon --exec babel-node --stage 0 -- ./bin/www",
+    "watch": "watchify -t babelify -o build/js/bundle.js -v -d public/javascripts/app.js",
+    "build": "browserify -t babelify public/javascripts/app.js | uglifyjs -cm > build/js/bundle.min.js"
   },
   "browserify": {
     "transform": [
@@ -24,12 +25,14 @@
     "material-ui": "^0.10.2",
     "morgan": "~1.5.3",
     "react": "latest",
-    "react-engine": "^2.0.0",
+    "react-engine": "^1.7.0",
     "react-router": "^0.13.3",
     "react-tap-event-plugin": "^0.1.7",
     "serve-favicon": "~2.2.1"
   },
   "devDependencies": {
+    "babel": "^5.8.19",
+    "babel-runtime": "^5.8.19",
     "babelify": "latest",
     "browserify": "latest",
     "envify": "latest",

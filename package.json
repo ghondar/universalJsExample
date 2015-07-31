@@ -25,7 +25,6 @@
     "material-ui": "^0.10.2",
     "morgan": "~1.5.3",
     "react": "latest",
-    "react-engine": "^1.7.0",
     "react-router": "^0.13.3",
     "react-tap-event-plugin": "^0.1.7",
     "serve-favicon": "~2.2.1"

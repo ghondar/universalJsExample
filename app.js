@@ -1,4 +1,3 @@
-'use strict';
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -13,6 +12,7 @@ var users = require('./routes/users');
 var app = express();
 
 app.engine('.jsx', renderer.server.create({
+  routes: require(path.join(__dirname, 'public', 'javascripts', 'routes', 'routes.js')),
   reactRoutes: path.normalize(path.join(__dirname, 'public', 'javascripts', 'routes', 'routes.js'))
 }));
 
@@ -45,10 +45,10 @@ app.get('*', function(req, res){
 //   next(err);
 // });
 
-// // error handlers
+// error handlers
 
-// // development error handler
-// // will print stacktrace
+// development error handler
+// will print stacktrace
 // if (app.get('env') === 'development') {
 //   app.use(function(err, req, res, next) {
 //     res.status(err.status || 500);

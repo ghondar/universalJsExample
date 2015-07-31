@@ -9,6 +9,7 @@ export default (
   <Route path="/" handler={AppContainer} >
     <DefaultRoute name="home" handler={Home} />
     <Route name="movies" handler={Movies}/>
+    <Route name="error" handler={ErrorHanlder}></Route>
     <NotFoundRoute handler={ErrorHanlder}/>
   </Route>
 )
